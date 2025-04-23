@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web3D App</title>
+  <style>
+    body.light {
+      background-color: white;
+    }
+
+    body.dark {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script>
+    function setTheme(theme) {
+      document.body.className = theme;
+      localStorage.setItem('mui-mode', theme);
+    }
+    const savedTheme = localStorage.getItem('mui-mode');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme('light');
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,791 @@
+<svg version="1.1" baseProfile="full" width="5095.0" height="604.0" viewBox="0 0 5095 604" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+
+[&lt;interface&gt;CodeRunnerOptions|+languageClassPrefix: string;+defaultLanguage: string;+HTMLAttributes: Record&lt;string, any&gt;|]
+[&lt;type&gt;SnackbarContextType|+setSeverity: (severity: &quot;success&quot; \| &quot;error&quot; \| &quot;info&quot; \| &quot;warning&quot;) =&gt; void;+setMessage: (message: string) =&gt; void;+setOpen: (open: boolean) =&gt; void|]
+[&lt;interface&gt;Article|+id: number;+userId: number;+title: string;+description?: string;+contentUrl: string;+createdAt: string;+updatedAt?: string|]
+[&lt;interface&gt;ArticleDto|+title: string;+description?: string;+contentUrl: string|]
+[&lt;interface&gt;ArticleForSchemas|+title: string;+description?: string;+content: string|]
+[&lt;interface&gt;PageResult&lt;T&gt;|+data: T\[\];+totalCount: number|]
+[&lt;interface&gt;Test|+id: number;+userId: number;+title: string;+description?: string;+questions: Question\[\];+createdAt: string;+updatedAt?: string|]
+[&lt;interface&gt;TestDto|+title: string;+description?: string;+questions: Question\[\]|]
+[&lt;interface&gt;Question|+id: number;+testId: number;+index: number;+type: number;+text?: string;+taskJson: string;+imageUrl?: string|]
+[&lt;interface&gt;TestForSchemas|+title: string;+description?: string|]
+[&lt;interface&gt;TestForCreate|+title: string;+description?: string;+questions: QuestionForCreate\[\]|]
+[&lt;interface&gt;BaseQuestion|+id: number;+testId: number;+index: number;+type: QuestionType;+text?: string;+imageUrl?: string|]
+[&lt;interface&gt;TestResult|+id: number;+userId: number;+testId: number;+attempt: number;+score?: number;+answersJson: string;+startedAt: string;+endedAt?: string|]
+[&lt;interface&gt;BaseAnswer|+questionId: number;+type: QuestionType;+isCompleted: boolean|]
+[&lt;interface&gt;AnswerResultDto|+questionId: number;+type: QuestionType;+userAnswerJson: string|]
+[&lt;interface&gt;AnswerResult|+questionId: number;+type: QuestionType;+userAnswerJson: string;+isCorrect: boolean|]
+[&lt;interface&gt;TestExtended|+id: number;+userId: number;+title: string;+description?: string;+questions: QuestionForCreate\[\];+createdAt: string;+updatedAt?: string|]
+[&lt;interface&gt;TestResultExtended|+id: number;+userId: number;+testId: number;+attempt: number;+score?: number;+answers: UserAnswer\[\];+startedAt: string;+endedAt?: string|]
+[&lt;enumeration&gt;QuestionType|SingleChoice;MultipleChoice;Matching;FillInTheBlank]
+[&lt;type&gt;QuestionMap||]
+[Test]  - 0..* [Question]
+[TestDto]  - 0..* [Question]
+[TestForCreate]  - 0..* [BaseQuestion]
+[TestForCreate]  - 0..* [BaseQuestion]
+[TestForCreate]  - 0..* [BaseQuestion]
+[TestForCreate]  - 0..* [BaseQuestion]
+[BaseQuestion]  -  [QuestionType]
+[BaseAnswer]  -  [QuestionType]
+[AnswerResultDto]  -  [QuestionType]
+[AnswerResult]  -  [QuestionType]
+[TestExtended]  - 0..* [BaseQuestion]
+[TestExtended]  - 0..* [BaseQuestion]
+[TestExtended]  - 0..* [BaseQuestion]
+[TestExtended]  - 0..* [BaseQuestion]
+[TestResultExtended]  - 0..* [BaseAnswer]
+[TestResultExtended]  - 0..* [BaseAnswer]
+[TestResultExtended]  - 0..* [BaseAnswer]
+[TestResultExtended]  - 0..* [BaseAnswer]
+[&lt;interface&gt;UserDto|+id: number;+lastName: string;+firstName: string;+middleName?: string;+role: number|]
+[&lt;interface&gt;RegData|+login: string;+password: string;+lastName: string;+firstName: string;+middleName?: string;+role: number|]
+[&lt;interface&gt;LogData|+login: string;+password: string|]
+[&lt;interface&gt;UpdUserData|+lastName: string;+firstName: string;+middleName?: string|]
+[&lt;interface&gt;UpdUserPass|+oldPassword: string;+newPassword: string|]
+[&lt;interface&gt;ChangeUserRole|+userId: number;+newRole: number|]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="604.0" width="5095.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<text x="1965.0" y="231.0" stroke="none">0..*</text>
+<path d="M1920.0 177.5 L1920 206 L1957 239.04700854700855 L1957.0 239.0 " fill="none"></path>
+<text x="2082.0" y="231.0" stroke="none">0..*</text>
+<path d="M2154.0 145.5 L2154 206 L2117 239.04700854700855 L2117.0 239.0 " fill="none"></path>
+<text x="2831.0" y="284.2" stroke="none">0..*</text>
+<path d="M2530.6 145.5 L2399.25 206 L2823 292.1934306569343 L2823.0 292.2 " fill="none"></path>
+<text x="2831.0" y="282.6" stroke="none">0..*</text>
+<path d="M2549.1 145.5 L2439.25 206 L2823 290.64775725593665 L2823.0 290.6 " fill="none"></path>
+<text x="2877.1" y="226.0" stroke="none">0..*</text>
+<path d="M2741.4 145.5 L2853 206 L2869.0765550239234 234 L2869.1 234.0 " fill="none"></path>
+<text x="2906.4" y="226.0" stroke="none">0..*</text>
+<path d="M2760.0 145.5 L2893 206 L2898.3588516746413 234 L2898.4 234.0 " fill="none"></path>
+<path d="M2913.0 387.0 L2913 415 L3457.75 483.2331150225133 L3457.8 483.2 " fill="none"></path>
+<path d="M3401.5 363.0 L3401.5 415 L3457.75 450.1993865030675 L3457.8 450.2 " fill="none"></path>
+<path d="M3646.0 363.0 L3646 415 L3589.75 450.1993865030675 L3589.8 450.2 " fill="none"></path>
+<path d="M3897.0 371.0 L3897 415 L3589.75 477.9728734092431 L3589.8 478.0 " fill="none"></path>
+<text x="2892.6" y="226.0" stroke="none">0..*</text>
+<path d="M3045.0 155.1 L2933 206 L2927.6411483253587 234 L2927.6 234.0 " fill="none"></path>
+<text x="2921.9" y="226.0" stroke="none">0..*</text>
+<path d="M3045.0 167.0 L2973 206 L2956.9234449760766 234 L2956.9 234.0 " fill="none"></path>
+<text x="2968.0" y="269.9" stroke="none">0..*</text>
+<path d="M3196.5 177.5 L3201.5 206 L3003 277.9003466204506 L3003.0 277.9 " fill="none"></path>
+<text x="2968.0" y="273.9" stroke="none">0..*</text>
+<path d="M3226.4 177.5 L3241.5 206 L3003 281.86986301369865 L3003.0 281.9 " fill="none"></path>
+<text x="3306.2" y="250.0" stroke="none">0..*</text>
+<path d="M3358.0 158.0 L3281.5 206 L3341.212918660287 258 L3341.2 258.0 " fill="none"></path>
+<text x="3356.5" y="250.0" stroke="none">0..*</text>
+<path d="M3395.7 186.0 L3381.5 206 L3391.4521531100477 258 L3391.5 258.0 " fill="none"></path>
+<text x="3406.7" y="250.0" stroke="none">0..*</text>
+<path d="M3478.0 186.0 L3481.5 206 L3441.6913875598084 258 L3441.7 258.0 " fill="none"></path>
+<text x="3426.8" y="250.0" stroke="none">0..*</text>
+<path d="M3510.9 186.0 L3521.5 206 L3461.787081339713 258 L3461.8 258.0 " fill="none"></path>
+<g data-name="CodeRunnerOptions">
+<g fill="lightblue" stroke="#33322E" data-name="CodeRunnerOptions">
+<rect x="0.0" y="40.5" height="105.0" width="317.0" data-name="CodeRunnerOptions"></rect>
+<path d="M0.0 72.5 L317.0 72.5" fill="none" data-name="CodeRunnerOptions"></path>
+<path d="M0.0 137.5 L317.0 137.5" fill="none" data-name="CodeRunnerOptions"></path>
+</g>
+<g transform="translate(0, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CodeRunnerOptions" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CodeRunnerOptions" data-compartment="0">
+<a id="src\components\CodeRunner.ts.CodeRunnerOptions" xlink:href="src\components\CodeRunner.ts"><text x="150.5" y="14.1" stroke="none" text-anchor="middle" data-name="CodeRunnerOptions" data-compartment="0">CodeRunnerOptions</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CodeRunnerOptions" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CodeRunnerOptions" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="CodeRunnerOptions" data-compartment="1">+languageClassPrefix: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="CodeRunnerOptions" data-compartment="1">+defaultLanguage: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="CodeRunnerOptions" data-compartment="1">+HTMLAttributes: Record&lt;string, any&gt;</text>
+
+</g>
+</g>
+<g transform="translate(0, 137.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CodeRunnerOptions" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CodeRunnerOptions" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="SnackbarContextType">
+<g fill="lightgray" stroke="#33322E" data-name="SnackbarContextType">
+<rect x="357.0" y="40.5" height="105.0" width="558.0" data-name="SnackbarContextType"></rect>
+<path d="M357.0 72.5 L915.0 72.5" fill="none" data-name="SnackbarContextType"></path>
+<path d="M357.0 137.5 L915.0 137.5" fill="none" data-name="SnackbarContextType"></path>
+</g>
+<g transform="translate(357, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="SnackbarContextType" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="SnackbarContextType" data-compartment="0">
+<a id="src\context\SnackbarContext.ts.SnackbarContextType" xlink:href="src\context\SnackbarContext.ts"><text x="271.0" y="14.1" stroke="none" text-anchor="middle" data-name="SnackbarContextType" data-compartment="0">SnackbarContextType</text></a>
+
+</g>
+</g>
+<g transform="translate(357, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="SnackbarContextType" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="SnackbarContextType" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="SnackbarContextType" data-compartment="1">+setSeverity: (severity: &quot;success&quot; | &quot;error&quot; | &quot;info&quot; | &quot;warning&quot;) =&gt; void</text>
+<text x="0.0" y="30.3" stroke="none" data-name="SnackbarContextType" data-compartment="1">+setMessage: (message: string) =&gt; void</text>
+<text x="0.0" y="46.5" stroke="none" data-name="SnackbarContextType" data-compartment="1">+setOpen: (open: boolean) =&gt; void</text>
+
+</g>
+</g>
+<g transform="translate(357, 137.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="SnackbarContextType" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="SnackbarContextType" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Article">
+<g fill="lightblue" stroke="#33322E" data-name="Article">
+<rect x="955.0" y="8.5" height="169.0" width="177.0" data-name="Article"></rect>
+<path d="M955.0 40.5 L1132.0 40.5" fill="none" data-name="Article"></path>
+<path d="M955.0 169.5 L1132.0 169.5" fill="none" data-name="Article"></path>
+</g>
+<g transform="translate(955, 8.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Article" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Article" data-compartment="0">
+<a id="src\mytypes\articleTypes.ts.Article" xlink:href="src\mytypes\articleTypes.ts"><text x="80.5" y="14.1" stroke="none" text-anchor="middle" data-name="Article" data-compartment="0">Article</text></a>
+
+</g>
+</g>
+<g transform="translate(955, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Article" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Article" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Article" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Article" data-compartment="1">+userId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Article" data-compartment="1">+title: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Article" data-compartment="1">+description?: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Article" data-compartment="1">+contentUrl: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Article" data-compartment="1">+createdAt: string</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Article" data-compartment="1">+updatedAt?: string</text>
+
+</g>
+</g>
+<g transform="translate(955, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Article" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Article" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ArticleDto">
+<g fill="lightblue" stroke="#33322E" data-name="ArticleDto">
+<rect x="1172.0" y="40.5" height="105.0" width="177.0" data-name="ArticleDto"></rect>
+<path d="M1172.0 72.5 L1349.0 72.5" fill="none" data-name="ArticleDto"></path>
+<path d="M1172.0 137.5 L1349.0 137.5" fill="none" data-name="ArticleDto"></path>
+</g>
+<g transform="translate(1172, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ArticleDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ArticleDto" data-compartment="0">
+<a id="src\mytypes\articleTypes.ts.ArticleDto" xlink:href="src\mytypes\articleTypes.ts"><text x="80.5" y="14.1" stroke="none" text-anchor="middle" data-name="ArticleDto" data-compartment="0">ArticleDto</text></a>
+
+</g>
+</g>
+<g transform="translate(1172, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ArticleDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ArticleDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ArticleDto" data-compartment="1">+title: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ArticleDto" data-compartment="1">+description?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ArticleDto" data-compartment="1">+contentUrl: string</text>
+
+</g>
+</g>
+<g transform="translate(1172, 137.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ArticleDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ArticleDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ArticleForSchemas">
+<g fill="lightblue" stroke="#33322E" data-name="ArticleForSchemas">
+<rect x="1389.0" y="40.5" height="105.0" width="177.0" data-name="ArticleForSchemas"></rect>
+<path d="M1389.0 72.5 L1566.0 72.5" fill="none" data-name="ArticleForSchemas"></path>
+<path d="M1389.0 137.5 L1566.0 137.5" fill="none" data-name="ArticleForSchemas"></path>
+</g>
+<g transform="translate(1389, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ArticleForSchemas" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ArticleForSchemas" data-compartment="0">
+<a id="src\mytypes\articleTypes.ts.ArticleForSchemas" xlink:href="src\mytypes\articleTypes.ts"><text x="80.5" y="14.1" stroke="none" text-anchor="middle" data-name="ArticleForSchemas" data-compartment="0">ArticleForSchemas</text></a>
+
+</g>
+</g>
+<g transform="translate(1389, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ArticleForSchemas" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ArticleForSchemas" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ArticleForSchemas" data-compartment="1">+title: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ArticleForSchemas" data-compartment="1">+description?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="ArticleForSchemas" data-compartment="1">+content: string</text>
+
+</g>
+</g>
+<g transform="translate(1389, 137.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ArticleForSchemas" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ArticleForSchemas" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="PageResult&lt;T&gt;">
+<g fill="lightblue" stroke="#33322E" data-name="PageResult&lt;T&gt;">
+<rect x="1606.0" y="49.0" height="88.0" width="177.0" data-name="PageResult&lt;T&gt;"></rect>
+<path d="M1606.0 81.0 L1783.0 81.0" fill="none" data-name="PageResult&lt;T&gt;"></path>
+<path d="M1606.0 129.0 L1783.0 129.0" fill="none" data-name="PageResult&lt;T&gt;"></path>
+</g>
+<g transform="translate(1606, 49)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PageResult&lt;T&gt;" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="PageResult&lt;T&gt;" data-compartment="0">
+<a id="src\mytypes\commonTypes.ts.PageResult&lt;T&gt;" xlink:href="src\mytypes\commonTypes.ts"><text x="80.5" y="14.1" stroke="none" text-anchor="middle" data-name="PageResult&lt;T&gt;" data-compartment="0">PageResult&lt;T&gt;</text></a>
+
+</g>
+</g>
+<g transform="translate(1606, 81)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PageResult&lt;T&gt;" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="PageResult&lt;T&gt;" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="PageResult&lt;T&gt;" data-compartment="1">+data: T[]</text>
+<text x="0.0" y="30.3" stroke="none" data-name="PageResult&lt;T&gt;" data-compartment="1">+totalCount: number</text>
+
+</g>
+</g>
+<g transform="translate(1606, 129)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="PageResult&lt;T&gt;" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="PageResult&lt;T&gt;" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Test">
+<g fill="lightblue" stroke="#33322E" data-name="Test">
+<rect x="1823.0" y="8.5" height="169.0" width="194.0" data-name="Test"></rect>
+<path d="M1823.0 40.5 L2017.0 40.5" fill="none" data-name="Test"></path>
+<path d="M1823.0 169.5 L2017.0 169.5" fill="none" data-name="Test"></path>
+</g>
+<g transform="translate(1823, 8.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Test" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Test" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.Test" xlink:href="src\mytypes\testTypes.ts"><text x="89.0" y="14.1" stroke="none" text-anchor="middle" data-name="Test" data-compartment="0">Test</text></a>
+
+</g>
+</g>
+<g transform="translate(1823, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Test" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Test" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Test" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Test" data-compartment="1">+userId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Test" data-compartment="1">+title: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Test" data-compartment="1">+description?: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Test" data-compartment="1">+questions: Question[]</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Test" data-compartment="1">+createdAt: string</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Test" data-compartment="1">+updatedAt?: string</text>
+
+</g>
+</g>
+<g transform="translate(1823, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Test" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Test" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="TestDto">
+<g fill="lightblue" stroke="#33322E" data-name="TestDto">
+<rect x="2057.0" y="40.5" height="105.0" width="194.0" data-name="TestDto"></rect>
+<path d="M2057.0 72.5 L2251.0 72.5" fill="none" data-name="TestDto"></path>
+<path d="M2057.0 137.5 L2251.0 137.5" fill="none" data-name="TestDto"></path>
+</g>
+<g transform="translate(2057, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TestDto" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.TestDto" xlink:href="src\mytypes\testTypes.ts"><text x="89.0" y="14.1" stroke="none" text-anchor="middle" data-name="TestDto" data-compartment="0">TestDto</text></a>
+
+</g>
+</g>
+<g transform="translate(2057, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TestDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TestDto" data-compartment="1">+title: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TestDto" data-compartment="1">+description?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TestDto" data-compartment="1">+questions: Question[]</text>
+
+</g>
+</g>
+<g transform="translate(2057, 137.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TestDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="Question">
+<g fill="lightblue" stroke="#33322E" data-name="Question">
+<rect x="1957.0" y="226.0" height="169.0" width="160.0" data-name="Question"></rect>
+<path d="M1957.0 258.0 L2117.0 258.0" fill="none" data-name="Question"></path>
+<path d="M1957.0 387.0 L2117.0 387.0" fill="none" data-name="Question"></path>
+</g>
+<g transform="translate(1957, 226)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Question" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Question" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.Question" xlink:href="src\mytypes\testTypes.ts"><text x="72.0" y="14.1" stroke="none" text-anchor="middle" data-name="Question" data-compartment="0">Question</text></a>
+
+</g>
+</g>
+<g transform="translate(1957, 258)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Question" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Question" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="Question" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="Question" data-compartment="1">+testId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="Question" data-compartment="1">+index: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="Question" data-compartment="1">+type: number</text>
+<text x="0.0" y="78.9" stroke="none" data-name="Question" data-compartment="1">+text?: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="Question" data-compartment="1">+taskJson: string</text>
+<text x="0.0" y="111.3" stroke="none" data-name="Question" data-compartment="1">+imageUrl?: string</text>
+
+</g>
+</g>
+<g transform="translate(1957, 387)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Question" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Question" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="TestForSchemas">
+<g fill="lightblue" stroke="#33322E" data-name="TestForSchemas">
+<rect x="2291.0" y="49.0" height="88.0" width="177.0" data-name="TestForSchemas"></rect>
+<path d="M2291.0 81.0 L2468.0 81.0" fill="none" data-name="TestForSchemas"></path>
+<path d="M2291.0 129.0 L2468.0 129.0" fill="none" data-name="TestForSchemas"></path>
+</g>
+<g transform="translate(2291, 49)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestForSchemas" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TestForSchemas" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.TestForSchemas" xlink:href="src\mytypes\testTypes.ts"><text x="80.5" y="14.1" stroke="none" text-anchor="middle" data-name="TestForSchemas" data-compartment="0">TestForSchemas</text></a>
+
+</g>
+</g>
+<g transform="translate(2291, 81)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestForSchemas" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TestForSchemas" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TestForSchemas" data-compartment="1">+title: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TestForSchemas" data-compartment="1">+description?: string</text>
+
+</g>
+</g>
+<g transform="translate(2291, 129)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestForSchemas" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TestForSchemas" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="TestForCreate">
+<g fill="lightblue" stroke="#33322E" data-name="TestForCreate">
+<rect x="2508.0" y="40.5" height="105.0" width="273.0" data-name="TestForCreate"></rect>
+<path d="M2508.0 72.5 L2781.0 72.5" fill="none" data-name="TestForCreate"></path>
+<path d="M2508.0 137.5 L2781.0 137.5" fill="none" data-name="TestForCreate"></path>
+</g>
+<g transform="translate(2508, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestForCreate" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TestForCreate" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.TestForCreate" xlink:href="src\mytypes\testTypes.ts"><text x="128.5" y="14.1" stroke="none" text-anchor="middle" data-name="TestForCreate" data-compartment="0">TestForCreate</text></a>
+
+</g>
+</g>
+<g transform="translate(2508, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestForCreate" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TestForCreate" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TestForCreate" data-compartment="1">+title: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TestForCreate" data-compartment="1">+description?: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TestForCreate" data-compartment="1">+questions: QuestionForCreate[]</text>
+
+</g>
+</g>
+<g transform="translate(2508, 137.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestForCreate" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TestForCreate" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="BaseQuestion">
+<g fill="lightblue" stroke="#33322E" data-name="BaseQuestion">
+<rect x="2823.0" y="234.0" height="153.0" width="180.0" data-name="BaseQuestion"></rect>
+<path d="M2823.0 266.0 L3003.0 266.0" fill="none" data-name="BaseQuestion"></path>
+<path d="M2823.0 379.0 L3003.0 379.0" fill="none" data-name="BaseQuestion"></path>
+</g>
+<g transform="translate(2823, 234)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="BaseQuestion" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="BaseQuestion" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.BaseQuestion" xlink:href="src\mytypes\testTypes.ts"><text x="82.0" y="14.1" stroke="none" text-anchor="middle" data-name="BaseQuestion" data-compartment="0">BaseQuestion</text></a>
+
+</g>
+</g>
+<g transform="translate(2823, 266)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="BaseQuestion" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="BaseQuestion" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="BaseQuestion" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="BaseQuestion" data-compartment="1">+testId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="BaseQuestion" data-compartment="1">+index: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="BaseQuestion" data-compartment="1">+type: QuestionType</text>
+<text x="0.0" y="78.9" stroke="none" data-name="BaseQuestion" data-compartment="1">+text?: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="BaseQuestion" data-compartment="1">+imageUrl?: string</text>
+
+</g>
+</g>
+<g transform="translate(2823, 379)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="BaseQuestion" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="BaseQuestion" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="TestResult">
+<g fill="lightblue" stroke="#33322E" data-name="TestResult">
+<rect x="2821.0" y="0.0" height="186.0" width="184.0" data-name="TestResult"></rect>
+<path d="M2821.0 32.0 L3005.0 32.0" fill="none" data-name="TestResult"></path>
+<path d="M2821.0 178.0 L3005.0 178.0" fill="none" data-name="TestResult"></path>
+</g>
+<g transform="translate(2821, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestResult" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TestResult" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.TestResult" xlink:href="src\mytypes\testTypes.ts"><text x="84.0" y="14.1" stroke="none" text-anchor="middle" data-name="TestResult" data-compartment="0">TestResult</text></a>
+
+</g>
+</g>
+<g transform="translate(2821, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestResult" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TestResult" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TestResult" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TestResult" data-compartment="1">+userId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TestResult" data-compartment="1">+testId: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="TestResult" data-compartment="1">+attempt: number</text>
+<text x="0.0" y="78.9" stroke="none" data-name="TestResult" data-compartment="1">+score?: number</text>
+<text x="0.0" y="95.1" stroke="none" data-name="TestResult" data-compartment="1">+answersJson: string</text>
+<text x="0.0" y="111.3" stroke="none" data-name="TestResult" data-compartment="1">+startedAt: string</text>
+<text x="0.0" y="127.5" stroke="none" data-name="TestResult" data-compartment="1">+endedAt?: string</text>
+
+</g>
+</g>
+<g transform="translate(2821, 178)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestResult" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TestResult" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="BaseAnswer">
+<g fill="lightblue" stroke="#33322E" data-name="BaseAnswer">
+<rect x="3302.5" y="258.0" height="105.0" width="198.0" data-name="BaseAnswer"></rect>
+<path d="M3302.5 290.0 L3500.5 290.0" fill="none" data-name="BaseAnswer"></path>
+<path d="M3302.5 355.0 L3500.5 355.0" fill="none" data-name="BaseAnswer"></path>
+</g>
+<g transform="translate(3302.5, 258)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="BaseAnswer" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="BaseAnswer" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.BaseAnswer" xlink:href="src\mytypes\testTypes.ts"><text x="91.0" y="14.1" stroke="none" text-anchor="middle" data-name="BaseAnswer" data-compartment="0">BaseAnswer</text></a>
+
+</g>
+</g>
+<g transform="translate(3302.5, 290)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="BaseAnswer" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="BaseAnswer" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="BaseAnswer" data-compartment="1">+questionId: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="BaseAnswer" data-compartment="1">+type: QuestionType</text>
+<text x="0.0" y="46.5" stroke="none" data-name="BaseAnswer" data-compartment="1">+isCompleted: boolean</text>
+
+</g>
+</g>
+<g transform="translate(3302.5, 355)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="BaseAnswer" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="BaseAnswer" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="AnswerResultDto">
+<g fill="lightblue" stroke="#33322E" data-name="AnswerResultDto">
+<rect x="3540.5" y="258.0" height="105.0" width="211.0" data-name="AnswerResultDto"></rect>
+<path d="M3540.5 290.0 L3751.5 290.0" fill="none" data-name="AnswerResultDto"></path>
+<path d="M3540.5 355.0 L3751.5 355.0" fill="none" data-name="AnswerResultDto"></path>
+</g>
+<g transform="translate(3540.5, 258)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AnswerResultDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AnswerResultDto" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.AnswerResultDto" xlink:href="src\mytypes\testTypes.ts"><text x="97.5" y="14.1" stroke="none" text-anchor="middle" data-name="AnswerResultDto" data-compartment="0">AnswerResultDto</text></a>
+
+</g>
+</g>
+<g transform="translate(3540.5, 290)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AnswerResultDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AnswerResultDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AnswerResultDto" data-compartment="1">+questionId: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AnswerResultDto" data-compartment="1">+type: QuestionType</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AnswerResultDto" data-compartment="1">+userAnswerJson: string</text>
+
+</g>
+</g>
+<g transform="translate(3540.5, 355)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AnswerResultDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AnswerResultDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="AnswerResult">
+<g fill="lightblue" stroke="#33322E" data-name="AnswerResult">
+<rect x="3791.5" y="250.0" height="121.0" width="211.0" data-name="AnswerResult"></rect>
+<path d="M3791.5 282.0 L4002.5 282.0" fill="none" data-name="AnswerResult"></path>
+<path d="M3791.5 363.0 L4002.5 363.0" fill="none" data-name="AnswerResult"></path>
+</g>
+<g transform="translate(3791.5, 250)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AnswerResult" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AnswerResult" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.AnswerResult" xlink:href="src\mytypes\testTypes.ts"><text x="97.5" y="14.1" stroke="none" text-anchor="middle" data-name="AnswerResult" data-compartment="0">AnswerResult</text></a>
+
+</g>
+</g>
+<g transform="translate(3791.5, 282)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AnswerResult" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AnswerResult" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="AnswerResult" data-compartment="1">+questionId: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="AnswerResult" data-compartment="1">+type: QuestionType</text>
+<text x="0.0" y="46.5" stroke="none" data-name="AnswerResult" data-compartment="1">+userAnswerJson: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="AnswerResult" data-compartment="1">+isCorrect: boolean</text>
+
+</g>
+</g>
+<g transform="translate(3791.5, 363)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AnswerResult" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AnswerResult" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="TestExtended">
+<g fill="lightblue" stroke="#33322E" data-name="TestExtended">
+<rect x="3045.0" y="8.5" height="169.0" width="273.0" data-name="TestExtended"></rect>
+<path d="M3045.0 40.5 L3318.0 40.5" fill="none" data-name="TestExtended"></path>
+<path d="M3045.0 169.5 L3318.0 169.5" fill="none" data-name="TestExtended"></path>
+</g>
+<g transform="translate(3045, 8.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestExtended" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TestExtended" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.TestExtended" xlink:href="src\mytypes\testTypes.ts"><text x="128.5" y="14.1" stroke="none" text-anchor="middle" data-name="TestExtended" data-compartment="0">TestExtended</text></a>
+
+</g>
+</g>
+<g transform="translate(3045, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestExtended" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TestExtended" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TestExtended" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TestExtended" data-compartment="1">+userId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TestExtended" data-compartment="1">+title: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="TestExtended" data-compartment="1">+description?: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="TestExtended" data-compartment="1">+questions: QuestionForCreate[]</text>
+<text x="0.0" y="95.1" stroke="none" data-name="TestExtended" data-compartment="1">+createdAt: string</text>
+<text x="0.0" y="111.3" stroke="none" data-name="TestExtended" data-compartment="1">+updatedAt?: string</text>
+
+</g>
+</g>
+<g transform="translate(3045, 169.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestExtended" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TestExtended" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="TestResultExtended">
+<g fill="lightblue" stroke="#33322E" data-name="TestResultExtended">
+<rect x="3358.0" y="0.0" height="186.0" width="207.0" data-name="TestResultExtended"></rect>
+<path d="M3358.0 32.0 L3565.0 32.0" fill="none" data-name="TestResultExtended"></path>
+<path d="M3358.0 178.0 L3565.0 178.0" fill="none" data-name="TestResultExtended"></path>
+</g>
+<g transform="translate(3358, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestResultExtended" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="TestResultExtended" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.TestResultExtended" xlink:href="src\mytypes\testTypes.ts"><text x="95.5" y="14.1" stroke="none" text-anchor="middle" data-name="TestResultExtended" data-compartment="0">TestResultExtended</text></a>
+
+</g>
+</g>
+<g transform="translate(3358, 32)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestResultExtended" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="TestResultExtended" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="TestResultExtended" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="TestResultExtended" data-compartment="1">+userId: number</text>
+<text x="0.0" y="46.5" stroke="none" data-name="TestResultExtended" data-compartment="1">+testId: number</text>
+<text x="0.0" y="62.7" stroke="none" data-name="TestResultExtended" data-compartment="1">+attempt: number</text>
+<text x="0.0" y="78.9" stroke="none" data-name="TestResultExtended" data-compartment="1">+score?: number</text>
+<text x="0.0" y="95.1" stroke="none" data-name="TestResultExtended" data-compartment="1">+answers: UserAnswer[]</text>
+<text x="0.0" y="111.3" stroke="none" data-name="TestResultExtended" data-compartment="1">+startedAt: string</text>
+<text x="0.0" y="127.5" stroke="none" data-name="TestResultExtended" data-compartment="1">+endedAt?: string</text>
+
+</g>
+</g>
+<g transform="translate(3358, 178)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="TestResultExtended" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="TestResultExtended" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="QuestionType">
+<g fill="lightgreen" stroke="#33322E" data-name="QuestionType">
+<rect x="3457.8" y="435.0" height="113.0" width="132.0" data-name="QuestionType"></rect>
+<path d="M3457.8 467.0 L3589.8 467.0" fill="none" data-name="QuestionType"></path>
+</g>
+<g transform="translate(3457.75, 435)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="QuestionType" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="QuestionType" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.QuestionType" xlink:href="src\mytypes\testTypes.ts"><text x="58.0" y="14.1" stroke="none" text-anchor="middle" data-name="QuestionType" data-compartment="0">QuestionType</text></a>
+
+</g>
+</g>
+<g transform="translate(3457.75, 467)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="QuestionType" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="QuestionType" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="QuestionType" data-compartment="1">SingleChoice</text>
+<text x="0.0" y="30.3" stroke="none" data-name="QuestionType" data-compartment="1">MultipleChoice</text>
+<text x="0.0" y="46.5" stroke="none" data-name="QuestionType" data-compartment="1">Matching</text>
+<text x="0.0" y="62.7" stroke="none" data-name="QuestionType" data-compartment="1">FillInTheBlank</text>
+
+</g>
+</g>
+</g>
+<g data-name="QuestionMap">
+<g fill="lightgray" stroke="#33322E" data-name="QuestionMap">
+<rect x="3605.0" y="69.0" height="48.0" width="121.0" data-name="QuestionMap"></rect>
+<path d="M3605.0 101.0 L3726.0 101.0" fill="none" data-name="QuestionMap"></path>
+<path d="M3605.0 109.0 L3726.0 109.0" fill="none" data-name="QuestionMap"></path>
+</g>
+<g transform="translate(3605, 69)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="QuestionMap" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="QuestionMap" data-compartment="0">
+<a id="src\mytypes\testTypes.ts.QuestionMap" xlink:href="src\mytypes\testTypes.ts"><text x="52.5" y="14.1" stroke="none" text-anchor="middle" data-name="QuestionMap" data-compartment="0">QuestionMap</text></a>
+
+</g>
+</g>
+<g transform="translate(3605, 101)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="QuestionMap" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" data-name="QuestionMap" data-compartment="1">
+
+</g>
+</g>
+<g transform="translate(3605, 109)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="QuestionMap" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="QuestionMap" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UserDto">
+<g fill="lightblue" stroke="#33322E" data-name="UserDto">
+<rect x="3766.0" y="24.5" height="137.0" width="188.0" data-name="UserDto"></rect>
+<path d="M3766.0 56.5 L3954.0 56.5" fill="none" data-name="UserDto"></path>
+<path d="M3766.0 153.5 L3954.0 153.5" fill="none" data-name="UserDto"></path>
+</g>
+<g transform="translate(3766, 24.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserDto" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UserDto" data-compartment="0">
+<a id="src\mytypes\userTypes.ts.UserDto" xlink:href="src\mytypes\userTypes.ts"><text x="86.0" y="14.1" stroke="none" text-anchor="middle" data-name="UserDto" data-compartment="0">UserDto</text></a>
+
+</g>
+</g>
+<g transform="translate(3766, 56.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserDto" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UserDto" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UserDto" data-compartment="1">+id: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UserDto" data-compartment="1">+lastName: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UserDto" data-compartment="1">+firstName: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="UserDto" data-compartment="1">+middleName?: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="UserDto" data-compartment="1">+role: number</text>
+
+</g>
+</g>
+<g transform="translate(3766, 153.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UserDto" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UserDto" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="RegData">
+<g fill="lightblue" stroke="#33322E" data-name="RegData">
+<rect x="3994.0" y="16.5" height="153.0" width="188.0" data-name="RegData"></rect>
+<path d="M3994.0 48.5 L4182.0 48.5" fill="none" data-name="RegData"></path>
+<path d="M3994.0 161.5 L4182.0 161.5" fill="none" data-name="RegData"></path>
+</g>
+<g transform="translate(3994, 16.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RegData" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="RegData" data-compartment="0">
+<a id="src\mytypes\userTypes.ts.RegData" xlink:href="src\mytypes\userTypes.ts"><text x="86.0" y="14.1" stroke="none" text-anchor="middle" data-name="RegData" data-compartment="0">RegData</text></a>
+
+</g>
+</g>
+<g transform="translate(3994, 48.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RegData" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="RegData" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="RegData" data-compartment="1">+login: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="RegData" data-compartment="1">+password: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="RegData" data-compartment="1">+lastName: string</text>
+<text x="0.0" y="62.7" stroke="none" data-name="RegData" data-compartment="1">+firstName: string</text>
+<text x="0.0" y="78.9" stroke="none" data-name="RegData" data-compartment="1">+middleName?: string</text>
+<text x="0.0" y="95.1" stroke="none" data-name="RegData" data-compartment="1">+role: number</text>
+
+</g>
+</g>
+<g transform="translate(3994, 161.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="RegData" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="RegData" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="LogData">
+<g fill="lightblue" stroke="#33322E" data-name="LogData">
+<rect x="4222.0" y="49.0" height="88.0" width="156.0" data-name="LogData"></rect>
+<path d="M4222.0 81.0 L4378.0 81.0" fill="none" data-name="LogData"></path>
+<path d="M4222.0 129.0 L4378.0 129.0" fill="none" data-name="LogData"></path>
+</g>
+<g transform="translate(4222, 49)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="LogData" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="LogData" data-compartment="0">
+<a id="src\mytypes\userTypes.ts.LogData" xlink:href="src\mytypes\userTypes.ts"><text x="70.0" y="14.1" stroke="none" text-anchor="middle" data-name="LogData" data-compartment="0">LogData</text></a>
+
+</g>
+</g>
+<g transform="translate(4222, 81)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="LogData" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="LogData" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="LogData" data-compartment="1">+login: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="LogData" data-compartment="1">+password: string</text>
+
+</g>
+</g>
+<g transform="translate(4222, 129)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="LogData" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="LogData" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdUserData">
+<g fill="lightblue" stroke="#33322E" data-name="UpdUserData">
+<rect x="4418.0" y="40.5" height="105.0" width="188.0" data-name="UpdUserData"></rect>
+<path d="M4418.0 72.5 L4606.0 72.5" fill="none" data-name="UpdUserData"></path>
+<path d="M4418.0 137.5 L4606.0 137.5" fill="none" data-name="UpdUserData"></path>
+</g>
+<g transform="translate(4418, 40.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdUserData" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdUserData" data-compartment="0">
+<a id="src\mytypes\userTypes.ts.UpdUserData" xlink:href="src\mytypes\userTypes.ts"><text x="86.0" y="14.1" stroke="none" text-anchor="middle" data-name="UpdUserData" data-compartment="0">UpdUserData</text></a>
+
+</g>
+</g>
+<g transform="translate(4418, 72.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdUserData" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdUserData" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdUserData" data-compartment="1">+lastName: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdUserData" data-compartment="1">+firstName: string</text>
+<text x="0.0" y="46.5" stroke="none" data-name="UpdUserData" data-compartment="1">+middleName?: string</text>
+
+</g>
+</g>
+<g transform="translate(4418, 137.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdUserData" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdUserData" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="UpdUserPass">
+<g fill="lightblue" stroke="#33322E" data-name="UpdUserPass">
+<rect x="4646.0" y="49.0" height="88.0" width="189.0" data-name="UpdUserPass"></rect>
+<path d="M4646.0 81.0 L4835.0 81.0" fill="none" data-name="UpdUserPass"></path>
+<path d="M4646.0 129.0 L4835.0 129.0" fill="none" data-name="UpdUserPass"></path>
+</g>
+<g transform="translate(4646, 49)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdUserPass" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="UpdUserPass" data-compartment="0">
+<a id="src\mytypes\userTypes.ts.UpdUserPass" xlink:href="src\mytypes\userTypes.ts"><text x="86.5" y="14.1" stroke="none" text-anchor="middle" data-name="UpdUserPass" data-compartment="0">UpdUserPass</text></a>
+
+</g>
+</g>
+<g transform="translate(4646, 81)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdUserPass" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="UpdUserPass" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="UpdUserPass" data-compartment="1">+oldPassword: string</text>
+<text x="0.0" y="30.3" stroke="none" data-name="UpdUserPass" data-compartment="1">+newPassword: string</text>
+
+</g>
+</g>
+<g transform="translate(4646, 129)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="UpdUserPass" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="UpdUserPass" data-compartment="2">
+
+</g>
+</g>
+</g>
+<g data-name="ChangeUserRole">
+<g fill="lightblue" stroke="#33322E" data-name="ChangeUserRole">
+<rect x="4875.0" y="49.0" height="88.0" width="164.0" data-name="ChangeUserRole"></rect>
+<path d="M4875.0 81.0 L5039.0 81.0" fill="none" data-name="ChangeUserRole"></path>
+<path d="M4875.0 129.0 L5039.0 129.0" fill="none" data-name="ChangeUserRole"></path>
+</g>
+<g transform="translate(4875, 49)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ChangeUserRole" data-compartment="0">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ChangeUserRole" data-compartment="0">
+<a id="src\mytypes\userTypes.ts.ChangeUserRole" xlink:href="src\mytypes\userTypes.ts"><text x="74.0" y="14.1" stroke="none" text-anchor="middle" data-name="ChangeUserRole" data-compartment="0">ChangeUserRole</text></a>
+
+</g>
+</g>
+<g transform="translate(4875, 81)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ChangeUserRole" data-compartment="1">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ChangeUserRole" data-compartment="1">
+<text x="0.0" y="14.1" stroke="none" data-name="ChangeUserRole" data-compartment="1">+userId: number</text>
+<text x="0.0" y="30.3" stroke="none" data-name="ChangeUserRole" data-compartment="1">+newRole: number</text>
+
+</g>
+</g>
+<g transform="translate(4875, 129)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ChangeUserRole" data-compartment="2">
+<g transform="translate(8, 8)" fill="#33322E" data-name="ChangeUserRole" data-compartment="2">
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
